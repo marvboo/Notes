@@ -1,9 +1,3 @@
----
-layout: resourcePage 
-title: Git cheatsheet 
-home: false 
----
-
 ### Note
 
 >This cheatsheet is based on the online version of the [Pro Git Book](https://git-scm.com/book) and
@@ -36,7 +30,7 @@ the Git man pages.
 
 <a id="intro"></a>
 
-### Introduction 
+### Introduction
 
 ------------------------------------------------
 
@@ -59,15 +53,15 @@ server.  Or, the repository can be hosted on a server so clients can clone
 
 There are three main sections of a Git project:
 
-1. Local repository 
+1. Local repository
  * a compressed database of committed files
  * HEAD is a pointer to the current branch
  * also known as the .git directory
  * can also have a remote repository
 2. Working directory
- * a checkout from the local repository 
+ * a checkout from the local repository
  * edit or create new files here
-3. Staging area 
+3. Staging area
  * files here are ready to be committed
  * also known as the index
 
@@ -95,10 +89,10 @@ directory and run:
 git init
 ```
 
-This creates a .git folder inside the project directory. 
+This creates a .git folder inside the project directory.
 
-However, if it's a shared repository, use the bare option. This omits the working directory 
-so files can't be edited and committed there. 
+However, if it's a shared repository, use the bare option. This omits the working directory
+so files can't be edited and committed there.
 
 SSH to the server and run:
 
@@ -133,20 +127,20 @@ Use git config to setup the repository or global options ( use `--global` ).
 
 
 <br>
-    
+
 #### .gitignore file
 
 Create a .gitignore file to tell Git which type of files to leave untracked.
 See <https://github.com/github/gitignore> for templates.
 
-A sample .gitignore file: 
+A sample .gitignore file:
 
-	# no .a files 
-	*.a 
-	
-	# but do track lib.a, even though we ignore .a files above 
-	!lib.a 
-	
+	# no .a files
+	*.a
+
+	# but do track lib.a, even though we ignore .a files above
+	!lib.a
+
 	# ignore all files in the build/ directory
 	build/
 
@@ -177,7 +171,7 @@ Untracked files added this way are now tracked and staged.
 
 <a id="commit"></a>
 
-### Commit 
+### Commit
 ------------------------------------------
 
 ```
@@ -191,7 +185,7 @@ Staged files now committed.
 
 <a id="branching"></a>
 
-### Branching and merging 
+### Branching and merging
 ------------------------------------------
 
 | Command                                          | Description          |
@@ -224,8 +218,8 @@ To return to latest snapshot on master branch, run `git checkout master`.
 -----------------------
 
 After merging, use `git status` to find any unmerged paths (files).
-If there are conflicts, use `git mergetool` to select which version to keep, or 
-manually edit the file with a text editor. The file will contain 
+If there are conflicts, use `git mergetool` to select which version to keep, or
+manually edit the file with a text editor. The file will contain
 conflict markers:
 
 	<<<<<<< HEAD:file.txt
@@ -235,7 +229,7 @@ conflict markers:
 	>>>>>>> fixesBranch:file.txt
 
 
-Edit the conflict marker to save the version you want. 
+Edit the conflict marker to save the version you want.
 After resolving conflicts, run `git status`, then stage and commit the changes.
 
 
@@ -264,7 +258,7 @@ After resolving conflicts, run `git status`, then stage and commit the changes.
 ### Rebase
 ---------
 
-A rebase is used if you want to perform a local cleanup on branches of unneeded merge commits. 
+A rebase is used if you want to perform a local cleanup on branches of unneeded merge commits.
 
 
 1. `git checkout fixesBranch`
@@ -292,10 +286,10 @@ Stash saves your work in progress, allowing you to switch branches without a com
 | :----------------------------------------------- | :------------------- |
 | `git stash [-u] [--keep-index]`                 | save modified tracked files and staged changes <br> `-u` also stash untracked files <br> `--keep-index` allows you to stash modified tracked files and commit staged files (run `git add` before this command) |
 | `git stash list`                 | list stored stashes |
-| `git stash apply [--index]`                 | reapplies most recent stash into current branch <br> `--index` option to re-stage changes | 
+| `git stash apply [--index]`                 | reapplies most recent stash into current branch <br> `--index` option to re-stage changes |
 | `git stash apply stash@{2}`                 | reapply an older stash {2} (see `git stash list`) |
 | `git stash drop`                 | remove a stash from the stack |
-| `git stash branch [newBranchName] [<stash>]`                 | creates a new branch, checks out the commit with the stash, reapplies the stash, and drops the stash if it applies <br> then you commit changes to newBranchName <br> specify the stash option like `stash@{<revisionNumber>}`, otherwise defaults to last stash | 
+| `git stash branch [newBranchName] [<stash>]`                 | creates a new branch, checks out the commit with the stash, reapplies the stash, and drops the stash if it applies <br> then you commit changes to newBranchName <br> specify the stash option like `stash@{<revisionNumber>}`, otherwise defaults to last stash |
 
 
 
@@ -321,11 +315,11 @@ Stash saves your work in progress, allowing you to switch branches without a com
 | Command                                          | Description          |
 | :----------------------------------------------- | :------------------- |
 | `git commit --amend`                 | change the commit message and commits staged files since last commit <br> don't amend your last commit if you've already pushed it (it changes the commit hash) |
-| `git revert <commit>`                 | change the commit message and commits staged files since last commit <br> creates a new commit that undoes changes in <commit> (only undoes changes in that commit, not subsequent ones) <br> revert keeps revision history, as opposed to reset <br> revert can be used on public commits, reset should only be used for local commits <br> specify `HEAD` to revert the last commit | 
+| `git revert <commit>`                 | change the commit message and commits staged files since last commit <br> creates a new commit that undoes changes in <commit> (only undoes changes in that commit, not subsequent ones) <br> revert keeps revision history, as opposed to reset <br> revert can be used on public commits, reset should only be used for local commits <br> specify `HEAD` to revert the last commit |
 | `git reset HEAD -- <file>`                 |  unstage a staged file (after adding) so it won't be committed <br> the dashes `--` are used to separate options and file path(s) <br> HEAD is a pointer to the last commit on current branch |
 | `git reset <commitHash>`                 | revert to that commit, changes made since that commit become modified / not staged |
 | `git reset --soft <commitHash>`                 | changes since are now staged for commit <br> undoes commits since and puts file back onto stage, useful for redoing last few commits as one big commit |
-| `git reset --hard <commitHash>`                 | discards changes since that commit!!! | 
+| `git reset --hard <commitHash>`                 | discards changes since that commit!!! |
 | `git checkout -- <file>`                 | undo changes to a file, but you lose all changes!!!! <br> Alternatively, use stash or create a new branch to keep the changes |
 | `git checkout <branchName or commitHash> <fileName>`                 | replaces (discarding changes ) an existing file with one from another branch |
 
@@ -338,8 +332,8 @@ Stash saves your work in progress, allowing you to switch branches without a com
 
 | Command                                          | Description          |
 | :----------------------------------------------- | :------------------- |
-| `git archive HEAD --format=zip > archive.zip`    | Export a repo | 
-| `git archive HEAD | gzip > archive.tar.gz`	   | Export a repo | 
+| `git archive HEAD --format=zip > archive.zip`    | Export a repo |
+| `git archive HEAD | gzip > archive.tar.gz`	   | Export a repo |
 | `git rm [--cached] <file>`	   | Stop tracking file and deletes it from disk (removes file from staging and from working directory) <br> after committing, file is no longer tracked <br> use `--cached` to keep the file on drive without Git tracking |
 | `git mv file newfile`	   | Rename a file |
 | `git log --pretty=format:"%h %s" --graph`	   | Pretty logging |
@@ -348,7 +342,7 @@ Stash saves your work in progress, allowing you to switch branches without a com
 
 
 
-	
+
 
 
 
@@ -369,5 +363,3 @@ A binary search to find which commit had bad code.
   * `git bisect bad`
 6. `git bisect reset`
   * when you're done, resets HEAD to where you were before running bisect
-
-
