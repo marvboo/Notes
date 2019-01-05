@@ -315,21 +315,15 @@ keep hitting <kbd>Ctrl R</kbd> until you get the command you want</td>
 	<tr>
 		<td><kbd>chmod a+rwx &lt;file&gt;</kbd></td>
 		<td>change file permissions: user, action, permission <br>
-
 			Users: u (user), g (others in the file's group), o (others on system), a (all, same as ugo) <br>
 			Action: + (add permission), - (remove), = (make it the only permissions)<br>
 			Permission: r, w, x (read, write, execute)<br>
-
 			<br>
-
 			<kbd>chmod go-w &lt;file&gt;</kbd>		(write protect from other users)<br>
 			<kbd>chmod go=  &lt;file&gt;</kbd>		(private, group and others can't r,w,x)<br>
 			<kbd>chmod a+x &lt;file&gt;</kbd>		(make file executable for all)
-
-
 			</td>
 	</tr>
-
 	<tr><td><kbd>df</kbd></td>				<td>disk free on system </td></tr>
 	<tr><td><kbd>du -h -t 100M</kbd></td>			<td>disk usage, list sub dirs larger than 100 MB</td></tr>
 	<tr><td><kbd>du -hs</kbd></td>				<td>du size of current dir</td></tr>
@@ -337,7 +331,6 @@ keep hitting <kbd>Ctrl R</kbd> until you get the command you want</td>
 	<tr><td><kbd>tree | wc -l</kbd></td>			<td>same, recursively</td></tr>
 	<tr><td><kbd>find . | wc -l</kbd></td>			<td>same, recursively</td></tr>
 	<tr><td><kbd>find . -type d | wc -l</kbd></td>		<td>count number of directories, recursively</td></tr>
-
 </table>
 
 
@@ -357,11 +350,9 @@ keep hitting <kbd>Ctrl R</kbd> until you get the command you want</td>
 		<tr> <td><kbd>find . -iname '*.pdf'</kbd></td>		<td>find pdf files in current dir recursively, ignore case </td> </tr>
 		<tr> <td><kbd>find . -iname '*.pdf' -o -iname '*.txt'</kbd></td>
 									<td>find pdf or txt files</td> </tr>
-
 		<tr> <td><kbd>find . -iname '*.p??'</kbd></td>		<td>find *p followed by 2 characters		</td> </tr>
 		<tr> <td><kbd>find . -size +1M</kbd></td>		<td>find files > 1MB, sizes are b, k, M, G,   use -1M for < 1MB</td> </tr>
 		<tr> <td><kbd>find . -empty</kbd></td>			<td>find empty files</td> </tr>
-
 		<tr> <td><kbd>find . -amin -60</kbd></td>		<td>find files accessed w/in last 60 minutes</td> </tr>
 		<tr> <td><kbd>find . -atime -2</kbd></td>		<td>find files accessed w/in last 2 days (whole days)</td> </tr>
 		<tr> <td><kbd>find . -anewer ex.txt</kbd></td>		<td>find files accessed more recently than ex.txt</td> </tr>
@@ -371,18 +362,13 @@ keep hitting <kbd>Ctrl R</kbd> until you get the command you want</td>
 		<tr> <td><kbd>find . -newer ex.txt</kbd></td>		<td>find files modified more recently than ex.txt</td> </tr>
 		<tr> <td><kbd>find . -mmin -10</kbd></td>		<td>find files modified in last 10 minutes </td> </tr>
 		<tr> <td><kbd>find . -mtime -2</kbd></td>		<td>find files modified w/in last 2 days (whole days)</td> </tr>
-
-
 		<tr> <td><kbd>find . -name '*.pdf' -newer x.pdf</kbd></td>		<td>can combine options</td> </tr>
 		<tr> <td><kbd>touch -t 01070000 tempfile</kbd> <br>
 		 	<kbd>find . -newer tempfile</kbd> <br>
-
 			</td>
 			<td>find files newer than Jan 7, current year</td> </tr>
-
 		<tr> <td><kbd>find . | wc -l</kbd></td>			<td>count number of files/ dirs in a dir, recursively</td> </tr>
 		<tr> <td><kbd>find . -type d | wc -l</kbd></td>		<td>count number of dirs, recursively</td> </tr>
-
 </table>
 
 
@@ -396,9 +382,6 @@ keep hitting <kbd>Ctrl R</kbd> until you get the command you want</td>
 		<th>Command</th>
 		<th>Description</th>
 	</tr>
-
-
-
 	<tr><td><kbd>nautilus -s .</kbd></td>			<td>open file browser in current directory</td></tr>
 	<tr><td><kbd>date</kbd></td>			<td>output current system date and time</td></tr>
 	<tr><td><kbd>cal</kbd></td>			<td>show cal of current month</td></tr>
@@ -410,7 +393,6 @@ keep hitting <kbd>Ctrl R</kbd> until you get the command you want</td>
 								update every 10s (-n)</td></tr>
 	<tr><td><kbd>bc</kbd></td>			<td>calculator, <kbd>quit</kbd> to exit</td></tr>
 	<tr><td><kbd>bc -l</kbd></td>			<td>math lib (sin, cos,....)</td></tr>
-
 	<tr><td><kbd>file [file]</kbd></td>	 			<td>determine format of a file</td></tr>
 	<tr><td><kbd>file -z zipFile.gz</kbd></td>			<td>determine original format of zipped file</td></tr>
 	<tr><td><kbd>type ls</kbd></td>					<td>is it running an alias?</td></tr>
@@ -435,8 +417,6 @@ keep hitting <kbd>Ctrl R</kbd> until you get the command you want</td>
 	<tr><td><kbd>tar -ztvf tarfile.tar.gz</kbd></td>		<td>list contents of</td></tr>
 	<tr><td><kbd>tar -xvf tarfile.tar</kbd></td>			<td>extract into current dir</td></tr>
 	<tr><td><kbd>tar -zxvf tarfile.tar.gz</kbd></td>		<td>extract into current dir</td></tr>
-
-
 	<tr><td><kbd>split -b1m large.bin large.bin.</kbd></td>			<td>splits large.bin into 1MB files large.bin .1, large.bin .2, ...</td></tr>
 	<tr><td><kbd>cat large.bin.* > large.bin</kbd></td>			<td>combine the split files back into large.bin</td></tr>
 	<tr><td><kbd>less README</kbd></td>					<td>has more options than 'more'</td></tr>
@@ -460,7 +440,6 @@ keep hitting <kbd>Ctrl R</kbd> until you get the command you want</td>
 											[0-9]					Any number <br>
 											^[^0-9]*$				Lines not containing any number<br>
 											^\A					Lines beginning w/ A
-
 											</td></tr>
 	<tr><td><kbd>apt list</kbd></td>			<td>advanced package tool, list installed packages<br>
 							other useful options:<br>
@@ -471,7 +450,6 @@ keep hitting <kbd>Ctrl R</kbd> until you get the command you want</td>
 							 upgrade - upgrade the system by installing/upgrading packages</td></tr>
 	<tr><td><kbd>apt search [term]</kbd></td>		<td>search in package descriptions</td></tr>
 </table>
-
 
 
 ---
