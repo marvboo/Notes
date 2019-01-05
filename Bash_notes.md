@@ -274,7 +274,6 @@ keep hitting <kbd>Ctrl R</kbd> until you get the command you want</td>
 			tip: use with <kbd>dirs -v</kbd> and cd ~[number] to navigate the directory stack
 		</td>
 	</tr>
-
 	<tr>
 		<td><kbd>ls -lhARt [optionalPath]</kbd></td>
 		<td>list files, long, human readable, almost all (no ., ..), Recursive, newest first <br>
@@ -295,7 +294,6 @@ keep hitting <kbd>Ctrl R</kbd> until you get the command you want</td>
 		<td><kbd>ls -1</kbd></td>
 		<td>1 column display (useful for copying)</td>
 	</tr>
-
 	<tr>
 	<td><kbd>tree -L 2</kbd></td>		<td>display directory tree, show 2 levels deep</td>
 	</tr>
