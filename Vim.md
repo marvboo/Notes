@@ -50,7 +50,7 @@
 	</tr>
 	<tr>
 		<td><kbd>:h toc</kbd></td>
-		<td>show help table of contents/td>
+		<td>show help table of contents</td>
 	</tr>
 </table>
 
@@ -517,7 +517,7 @@
 		<th>Result</th>
 	</tr>
 	<tr>
-		<td><kbd>\*</kbd></td>
+		<td><kbd>*</kbd></td>
 		<td>search for the word under the cursor</td>
 	</tr>
 	<tr>
