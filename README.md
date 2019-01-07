@@ -3,7 +3,7 @@
 
 ### Python
 
-[conda](#./conda.md)
+[conda](#/conda.md)
 
 [pandas](#./pandas.md)
 
