@@ -18,12 +18,12 @@
 ##### Prep and Installation
 ---
 
-I used the [Ubuntu Installation guide][2], specifically the
-[USB Installation guide][3]. Here are the steps that I ended up with.
+I used the [Ubuntu Installation guide][1], specifically the
+[USB Installation guide][2]. Here are the steps that I ended up with.
 
 1. Backup Windows data to the external USB hard drive
-2. Download [Ubuntu 16.04.2 LTS][4] .iso file
-3. Download [Rufus][5] and create a USB installer on the 2GB stick
+2. Download [Ubuntu 16.04.2 LTS][3] .iso file
+3. Download [Rufus][4] and create a USB installer on the 2GB stick
 4. Disable FastBoot in Windows
     * Control Panel >> Power Options
     * choose what the power buttons do
@@ -59,7 +59,7 @@ I used the [Ubuntu Installation guide][2], specifically the
 ---
 
 After rebooting, I was greeted with a "No Bootable Device" message.
-The solution was to set [UEFI trusted files][6].
+The solution was to set [UEFI trusted files][5].
 
 1. Reboot
 2. Edit BIOS , boot options
